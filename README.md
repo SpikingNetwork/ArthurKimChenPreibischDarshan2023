@@ -2,9 +2,12 @@ This repository contains Jupyter notebooks describing a workflow that could be
 used to re-create the figures in [Arthur, Kim, Chen, Preibisch, and Darshan
 (2023)](https://www.biorxiv.org/content/10.1101/2022.09.26.509578v3.full).  The
 actual figures were made using the Linux command line interface to
-TrainSpikingNet.jl to facilitate batching parallel jobs out to an on-premise
-cluster.
-
+[TrainSpikingNet.jl](https://github.com/SpikingNetwork/TrainSpikingNet.jl) to
+facilitate batching parallel jobs out to an on-premise cluster, instead of the
+Julia REPL as demonstrated here.
+[Gadfly.jl](https://github.com/GiovineItalia/Gadfly.jl) was also used for the
+manuscript's figures, whereas here we use
+[Makie.jl](https://github.com/MakieOrg/Makie.jl).
 
 If you want to follow along, you'll need to install and run Jupyter:
 
