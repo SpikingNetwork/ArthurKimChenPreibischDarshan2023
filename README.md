@@ -35,7 +35,7 @@ Then, on the Unix command line:
 
 ```
 ssh <your-machine> -L 8888:localhost:8888
-<path-to-jupyter-from-above> notebook
+<path-to-jupyter-from-above> notebook --no-browser --port=8888
 ```
 
 See https://github.com/JuliaLang/IJulia.jl/issues/586 for more details.

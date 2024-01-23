@@ -53,14 +53,14 @@ tau_meme = 10   # (ms)
 tau_memi = 10 
 invtau_mem = Vector{Float64}(undef, Ncells)
 invtau_mem[1:Ne] .= 1 ./ tau_meme
-invtau_mem[1+Ne:Ncells] .= 1 ./ tau_memi
+invtau_mem[(1+Ne):Ncells] .= 1 ./ tau_memi
 
 #spike thresholds
 threshe = 1.0
 threshi = 1.0
 thresh = Vector{Float64}(undef, Ncells)
 thresh[1:Ne] .= threshe
-thresh[1+Ne:Ncells] .= threshi
+thresh[(1+Ne):Ncells] .= threshi
 
 cellModel_file = "cellModel-LIF.jl"
 cellModel_args = (; thresh, invtau_mem, vre, dt)
@@ -106,7 +106,7 @@ genUTarget_args = (; train_time, stim_off, learn_every, Ncells, Nsteps, dt, rng,
                      :mu_ou_bias => 0.0, :b_ou_bias => 1/400, :sig_ou_bias => 0.02)
 
 # --- learned connections plugin --- #
-L = 32  # number of plastic weights per neuron
+L = 64  # number of plastic weights per neuron
 Lexc = L
 Linh = L
 LX = 0
